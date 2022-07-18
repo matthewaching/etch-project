@@ -1,7 +1,3 @@
-/* * {
-    border: 1px solid red;
-} */
-
 body {
     display: flex;
     justify-content: center;
@@ -15,7 +11,7 @@ body {
     background-color: red;
     padding: 150px;
     border-radius: 25px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .container {
@@ -33,21 +29,69 @@ body {
     background-color: lightgray;
 }
 
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 6px;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.left-knob, 
+.right-knob {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .knob-container {
     display: flex;
     justify-content: space-between;
     align-self: stretch;
+    margin: -10px -125px -125px -125px;
+    align-items: flex-end;
 }
 
 .knob {
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 50%;
     height: 125px;
     width: 125px;
-    margin: 25px -125px -125px -125px;
 }
 
 .activated {
     background-color: black;
+}
+
+.arrow {
+    border: solid black;
+    transform: rotate(45deg);
+    display: inline-block;
+    padding: 4px;
+}
+
+#r-ar {
+    border-width: 5px 5px 0 0;
+}
+  
+#l-ar {
+    border-width: 0 0 5px 5px;
+}
+  
+#u-ar {
+    border-width: 5px 0 0 5px;
+}
+  
+#d-ar {
+    border-width: 0 5px 5px 0;
+}
+
+.pressed {
+    height: 20px;
+    width: 20px;
 }

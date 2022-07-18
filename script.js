@@ -15,3 +15,18 @@ for (let i = 1; i <= resolution; i++) {
     container.appendChild(divSquare);
 }
 
+// document.addEventListener("keydown", function (e) {
+
+// })
+
+// const arrowArray = [...document.querySelectorAll('.arrow')];
+// for (let arrow of arrowArray)
+// const lArr = document.querySelector('#l-ar');
+// const rArr = document.querySelector('#r-ar');
+// const uArr = document.querySelector('#u-ar');
+// const dArr = document.querySelector('#d-ar');
+
+// function Keycoder (arrow, keyCode) {
+//     this.arrow = arrow;
+//     this.keyCode = keyCode;
+// }
