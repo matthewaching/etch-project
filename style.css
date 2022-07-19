@@ -92,6 +92,5 @@ body {
 }
 
 .pressed {
-    height: 20px;
-    width: 20px;
+    border: solid white;
 }
