@@ -1,8 +1,14 @@
 const container = document.querySelector('.container');
+const eraser = document.querySelector('.eraser');
+const resetter = document.querySelector('.resetter');
+const lArr = document.querySelector('#l-ar');
+const rArr = document.querySelector('#r-ar');
+const uArr = document.querySelector('#u-ar');
+const dArr = document.querySelector('#d-ar');
 
 // Allows for a changing square template. If a rectangular design is eventually decided on, sqrt code will need to change.
 // const oneDimension = 100;
-// const resolution = oneDimension ** 2; 
+// const resolution = oneDimension ** 2;
 
 const resolution = 128 * 72;
 
@@ -10,6 +16,8 @@ const currentPixel = {
     'x': 1,
     'y': 1,
 }
+
+// Renders drawing surface
 
 for (let i = 72; i >= 1; i--) {
     for (let j = 1; j <= 128; j++){
@@ -24,14 +32,14 @@ for (let i = 72; i >= 1; i--) {
     }
 }
 
-// document.addEventListener("keydown", function (e) {
+const allSquares = container.querySelectorAll('.square');
 
-// })
+eraser.addEventListener('click', () => allSquares.forEach((square) => square.classList.remove('activated')));
 
-const lArr = document.querySelector('#l-ar');
-const rArr = document.querySelector('#r-ar');
-const uArr = document.querySelector('#u-ar');
-const dArr = document.querySelector('#d-ar');
+resetter.addEventListener('click', () => {
+    currentPixel.x = 1;
+    currentPixel.y = 1;
+})
 
 document.addEventListener('keydown', e => {
     if (e.keyCode === 37) {
@@ -89,16 +97,9 @@ document.addEventListener('keyup', e => {
     }
 });
 
-
-
 function runPixel(x, y) {
     const findPixel = document.querySelector(`[data-x='${x}'][data-y='${y}']`);
     findPixel.classList.add('activated');
 }
 
 runPixel(currentPixel.x, currentPixel.y);
-
-// function Keycoder (arrow, keyCode) {
-//     this.arrow = arrow;
-//     this.keyCode = keyCode;
-// }

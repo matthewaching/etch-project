@@ -1,6 +1,16 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color:rgb(248, 219, 182);
+    gap: 24px;
+}
+
+header {
+    font-size: 36px;
+    font-weight: bold;
+    padding-top: 24px;
 }
 
 .toy {
