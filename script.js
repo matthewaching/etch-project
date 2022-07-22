@@ -39,6 +39,7 @@ eraser.addEventListener('click', () => allSquares.forEach((square) => square.cla
 resetter.addEventListener('click', () => {
     currentPixel.x = 1;
     currentPixel.y = 1;
+    runPixel();
 })
 
 document.addEventListener('keydown', e => {
@@ -47,7 +48,7 @@ document.addEventListener('keydown', e => {
 
         if (currentPixel.x > 1) {
             currentPixel.x--;
-            runPixel(currentPixel.x, currentPixel.y);
+            runPixel();
         }
     }
 
@@ -56,7 +57,7 @@ document.addEventListener('keydown', e => {
        
         if (currentPixel.y < 72) {
             currentPixel.y++;
-            runPixel(currentPixel.x, currentPixel.y);
+            runPixel();
         }
     }
 
@@ -65,7 +66,7 @@ document.addEventListener('keydown', e => {
         
         if (currentPixel.x < 128) {
             currentPixel.x++;
-            runPixel(currentPixel.x, currentPixel.y);
+            runPixel();
         }
     }
 
@@ -74,7 +75,7 @@ document.addEventListener('keydown', e => {
         
         if (currentPixel.y > 1) {
             currentPixel.y--;
-            runPixel(currentPixel.x, currentPixel.y);
+            runPixel();
         }
     }
 });
@@ -97,9 +98,16 @@ document.addEventListener('keyup', e => {
     }
 });
 
-function runPixel(x, y) {
-    const findPixel = document.querySelector(`[data-x='${x}'][data-y='${y}']`);
+// function runPixel(x, y) {
+//     const findPixel = document.querySelector(`[data-x='${x}'][data-y='${y}']`);
+//     findPixel.classList.add('activated');
+// }
+
+// runPixel(currentPixel.x, currentPixel.y);
+
+function runPixel() {
+    const findPixel = document.querySelector(`[data-x='${currentPixel.x}'][data-y='${currentPixel.y}']`);
     findPixel.classList.add('activated');
 }
 
-runPixel(currentPixel.x, currentPixel.y);
+runPixel();
